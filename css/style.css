@@ -1,0 +1,33 @@
+:root {
+  --background: #1100ff;
+}
+:root {
+  --text: #ff7300;
+}
+:root {
+  --link: #ffffff;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #00e1ff;
+  color: #035c00;
+}
+h1 {
+  color: #c00000;
+  font-size: 36px;
+}
+nav {
+  display: flex;
+  gap: 280px;
+  padding: 10px;
+  background-color: #690083;
+}
+
+nav a {
+  text-decoration: none;
+  color: hsl(0, 100%, 50%);
+  font-weight: bold;
+}
+nav a:hover {
+  color: #690083;
+}
