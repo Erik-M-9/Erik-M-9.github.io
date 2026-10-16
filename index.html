@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <meta name="description" content="home page.">
+<head>
+  <!-- REVIEW: moved <meta charset> to the top of <head> (browsers need it early) and moved the
+       stylesheet <link> INTO <head>. It was sitting between </head> and <body>, which is invalid HTML. -->
   <meta charset="UTF-8">
+  <!-- REVIEW: added a viewport tag so the page scales properly on phones. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Home page for Erik, game developer and designer.">
   <title>Erik — Studio Profile</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="css/style.css">
 <body>
+  <!-- The checkbox and label power the dark mode toggle (the CSS now has the dark mode rules). -->
   <input type="checkbox" id="dark-mode-toggle">
-<label for="dark-mode-toggle">🌙 Dark mode</label>
-    </header> 
-      <nav>
-        <a href="index.html">Home</a>
-       <a href="about.html">About Me</a>
-       <a href="work.html">My Work</a>
-     </nav>
+  <label for="dark-mode-toggle">🌙 Dark mode</label>
+
+  <!-- REVIEW: the original had a stray </header> with no opening <header>, and the navigation
+       appeared twice (a <nav>Erik</nav> plus a second </header>). Rebuilt as one <header>
+       that holds the name (as a real heading) and the navigation. -->
+  <header>
+    <h1>Erik</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="work.html">My Work</a>
+    </nav>
   </header>
-    <nav>Erik</nav>
-       <main>my avatar
-    <img src="images/Avatar_Normal.png" alt="my avatar"> 
-    <p>game development, designer</p>
-    <p>my name is Erik, and I'm excited to build and design things (especially games) </p>
+
+  <main>
+    <!-- REVIEW: removed the stray text "my avatar" that was showing on the page.
+         The alt text is still there for screen readers and if the image fails to load. -->
+    <img src="images/Avatar_Normal.png" alt="Erik's avatar">
+
+    <p>Game developer and designer</p>
+    <!-- REVIEW: capitalised "I'm", added a full stop, and tidied the spacing. -->
+    <p>My name is Erik, and I'm excited to build and design things (especially games).</p>
+
     <button id="titlebtn">Another site I've made:</button>
-<p id="response" style="display: none;">My webcomic: https://sites.google.com/view/stickman-comics-incorperated/home/:</p>
+
+    <!-- REVIEW: the webcomic was a bare web address followed by a colon. It is now a clickable link,
+         so visitors don't have to copy and paste it. The URL itself is unchanged.
+         Please check that the link opens: the address contains "incorperated", which is probably a
+         typo of "incorporated". If the site name was really spelled that way, leave the URL as it is. -->
+    <p id="response" style="display: none;">
+      My webcomic: <a href="https://sites.google.com/view/stickman-comics-incorperated/home/">Stickman Comics</a>
+    </p>
+  </main>
 
   <script src="js/script.js"></script>
 </body>

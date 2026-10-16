@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <meta name="description" content="my work.">
+<head>
+  <!-- REVIEW: moved the stylesheet <link> INTO <head> (it was between </head> and <body>, which is invalid HTML). -->
   <meta charset="UTF-8">
-  <title>My Work — Your Name</title>
+  <!-- REVIEW: added a viewport tag so the page scales properly on phones. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Erik's upcoming projects and the skills he wants to learn.">
+  <!-- REVIEW: the title still said "Your Name" (template placeholder). Changed to Erik. -->
+  <title>My Work — Erik</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="css/style.css">
 <body>
   <input type="checkbox" id="dark-mode-toggle">
-<label for="dark-mode-toggle">🌙 Dark mode</label>
-    </header>
+  <label for="dark-mode-toggle">🌙 Dark mode</label>
+
+  <!-- REVIEW: the original had several stray tags (an extra </header>, </main>, </nav>, and a second
+       <nav>My Work</nav>) that closed elements before they were opened. Rebuilt as one <header>. -->
+  <header>
+    <h1>My Work</h1>
     <nav>
-     <a href="index.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About Me</a>
-     <a href="work.html">My Work</a> 
+      <a href="work.html">My Work</a>
     </nav>
   </header>
-  </main>
-    </nav>
-    <nav>My Work</nav>
-     <p>Coming soon — here's what I'm hoping to build this year:</p>
-    <ul>
+
+  <main>
+    <p>Coming soon: here's what I'm hoping to build this year. Click a skill to see more.</p>
+
+    <!-- REVIEW: the original had two nested <ul> tags and an extra </ul>, and the text of each pill was in the
+         wrong place. For example, the "HTML" pill's text was an animal survival game, and the "CSS" pill's
+         text was about the webcomic. Each pill now has a label, and its description sits inside the
+         hidden .skill-detail span that the script shows when clicked.
+         NOTE for teacher: I matched the descriptions to the labels based on the content. The third pill
+         had no label, so I called it "Dinosaur app". Please check these match what Erik intended. -->
     <ul class="skills-list">
-  <li class="skill-pill">HTML <span class="skill-detail" style="display: none;"></span>some kind of animal survival game, because that's my favorite type of video game, but any sort of fun video game would be good.</li>
-  <li class="skill-pill">CSS <span class="skill-detail" style="display: none;">A more interactive version of my pre-existing webcomic.</span></li>
-  <li class="skill-pill"><span class="skill-detail" style="display: none;"></span>an app that gives you a random dinosaur from every contrey/continent (vauge idea)</li>
-</ul>
-    </main>
-  </ul>
+      <li class="skill-pill">HTML
+        <span class="skill-detail">An animal survival game, because that's my favorite type of video game. Any sort of fun video game would be good, too.</span>
+      </li>
+      <li class="skill-pill">CSS
+        <span class="skill-detail">A more interactive version of my pre-existing webcomic.</span>
+      </li>
+      <li class="skill-pill">Dinosaur app
+        <!-- REVIEW: "contrey/continent (vauge idea)" -> "country/continent (vague idea)". -->
+        <span class="skill-detail">An app that gives you a random dinosaur from every country or continent (a vague idea for now).</span>
+      </li>
+    </ul>
+  </main>
+
   <script src="js/script.js"></script>
 </body>
 </html>

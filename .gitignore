@@ -1,0 +1,11 @@
+# Windows thumbnail and folder-settings files (Thumbs.db was in images/)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS system files
+.DS_Store
+
+# Editor and IDE folders
+.vscode/
+.idea/

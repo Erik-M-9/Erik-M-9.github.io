@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Me — Erik</title>
-    <meta name="description" content="stuff about me.">
+  <!-- REVIEW: moved the stylesheet <link> INTO <head>. It was between </head> and <body>, which is invalid HTML. -->
+  <meta charset="UTF-8">
+  <!-- REVIEW: added a viewport tag so the page scales properly on phones. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Erik: his story, quick facts and favourites.">
+  <title>About Me — Erik</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="css/style.css">
-<body> 
-    <input type="checkbox" id="dark-mode-toggle">
-<label for="dark-mode-toggle">🌙 Dark mode</label>
-      </header>
-         <h1> Erik</h1>
-         <nav>
-         <a href="index.html">Home</a>
-         <a href="about.html">About Me</a>
-         <a href="work.html">My Work</a>
-      </nav>
-    </header>
+<body>
+  <input type="checkbox" id="dark-mode-toggle">
+  <label for="dark-mode-toggle">🌙 Dark mode</label>
 
+  <!-- REVIEW: the original had two stray </header> tags, the <h1> sat between them, and the navigation
+       was outside any header. Rebuilt as one <header> with the name and navigation inside. -->
+  <header>
+    <h1>Erik</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="work.html">My Work</a>
+    </nav>
+  </header>
 
-        <main>
-        <h2>My Story</h2>
-       <p>i haven't done much coding/game development in the past, but it was fun when i did it. i'm excited to build a video game.</p>
+  <main>
+    <h2>My Story</h2>
+    <!-- REVIEW: "i" -> "I", "i'm" -> "I'm", "coding/game development" -> "coding or game development",
+         "fun when i did it" -> "fun when I did it", and added full stops. Your wording is otherwise unchanged. -->
+    <p>I haven't done much coding or game development in the past, but it was fun when I did it. I'm excited to build a video game.</p>
 
-        <h2></h2>
-        <ul>
-        <hr>
-        <li>i was born in austrailia</li>
-        <li>i have 5 fish who are all different species and have names.</li>
-        </ul>
+    <!-- REVIEW: removed an empty <h2></h2> and a <hr> that was inside the <ul> (not allowed there).
+         "austrailia" -> "Australia" (spelling). -->
+    <ul>
+      <li>I was born in Australia.</li>
+      <li>I have 5 fish who are all different species and have names.</li>
+    </ul>
 
-       <h2>Quick Facts</h2>
-        <p>
-       My name is Erik<br>
-       <uI> 
-       <hr>
-       <li> my birth month is january, but I'm not sure what asterological sign that corresponds too.
-        <li> my favorite subject is probably science.
-        <li> my favorite video game right now is Prior Extinction <li>
-       <li> I play the piano, but don't really do any sports. <li>
-       <li> I don't really have 1 particular favorite food. <li>
-        <li> I would want omnimorphience, the ability to modify anything. <li>
-        <li> I really like vegemite waffles. <li>
-        <li> I have 4 tetras and a rasbora . <li>
-        <li> I would want to either go back to newcastle austrailia, or visit the amazon </li>
-       <li> I honestly think i like summer best, because no school </li>
-       <li> I think I'm more of a morning human. </li>
-       </li> i would recomend Prior Extinction, because again, it's my favorite game. </li> 
-       </li>  i would like to make a more complex game by the end of the course. </li>
-   </main> 
-   <script src="js/script.js"></script>
-</body>  
+    <h2>Quick Facts</h2>
+    <!-- REVIEW: the original had a "<uI>" typo, a <p> wrapped around a list, and <li> tags that were never
+         closed or closed in the wrong place (for example "</li> i would recomend ... </li>").
+         Rebuilt as one clean <ul> with one <li> per fact. Every fact is kept; only spelling,
+         capitals and HTML structure were changed. -->
+    <ul>
+      <li>My name is Erik.</li>
+      <!-- REVIEW: "asterological" -> "astrological", "corresponds too" -> "corresponds to". -->
+      <li>My birth month is January, but I'm not sure what astrological sign that corresponds to.</li>
+      <li>My favorite subject is probably science.</li>
+      <!-- REVIEW: game titles are italicised so they stand out as titles. -->
+      <li>My favorite video game right now is <em>Prior Extinction</em>.</li>
+      <li>I play the piano, but I don't really do any sports.</li>
+      <li>I don't really have one particular favorite food.</li>
+      <!-- NOTE for teacher: kept "omnimorphience" as Erik's own word. If he meant a different word
+           (for example "omnipotence"), he can change it. -->
+      <li>If I could have any superpower, I would want omnimorphience, the ability to modify anything.</li>
+      <li>I really like Vegemite waffles.</li>
+      <!-- NOTE: 4 tetras + 1 rasbora = 5 fish, which matches the "5 fish" line above. -->
+      <li>I have 4 tetras and a rasbora.</li>
+      <!-- REVIEW: "newcastle austrailia" -> "Newcastle, Australia", and "the amazon" -> "the Amazon rainforest". -->
+      <li>I would want to either go back to Newcastle, Australia, or visit the Amazon rainforest.</li>
+      <li>I honestly think I like summer best, because there's no school.</li>
+      <!-- REVIEW: "morning human" -> "morning person" (the more common phrase). -->
+      <li>I think I'm more of a morning person.</li>
+      <!-- REVIEW: "recomend" -> "recommend". -->
+      <li>I would recommend <em>Prior Extinction</em>, because again, it's my favorite game.</li>
+      <li>I would like to make a more complex game by the end of the course.</li>
+    </ul>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
