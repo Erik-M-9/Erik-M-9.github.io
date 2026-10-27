@@ -1,79 +1,33 @@
-/* REVIEW: colours are now defined once here as variables. The original had three separate :root
-   blocks, and --background and --text were never used. Change a value here and the whole site updates. */
 :root {
-  --page-bg: #00e1ff;
-  --page-text: #035c00;
-  --heading: #c00000;
-  --nav-bg: #690083;
-  /* REVIEW: nav links were bright red (hsl(0,100%,50%)) on purple, which is hard to read.
-     Changed to white (the value your --link variable already had). */
-  --nav-link: #ffffff;
-  /* REVIEW: the hover colour was #690083, the same as the nav background, so the link text
-     vanished when you hovered over it. Changed to yellow so it stands out. Change it if you like. */
-  --nav-hover: #ffff66;
+  --background: #1100ff;
 }
-
+:root {
+  --text: #ff7300;
+}
+:root {
+  --link: #ffffff;
+}
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--page-bg);
-  color: var(--page-text);
+  background-color: #00e1ff;
+  color: #035c00;
 }
-
 h1 {
-  color: var(--heading);
+  color: #c00000;
   font-size: 36px;
 }
-
 nav {
   display: flex;
-  /* REVIEW: the gap was 280px, which pushes links off the screen on phones.
-     40px keeps them spaced out, and flex-wrap lets them drop to a new line if needed. */
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  gap: 280px;
   padding: 10px;
-  background-color: var(--nav-bg);
+  background-color: #690083;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--nav-link);
+  color: hsl(0, 100%, 50%);
   font-weight: bold;
 }
-
 nav a:hover {
-  color: var(--nav-hover);
-}
-
-/* REVIEW: the dark mode checkbox was visible and had no styling, so the "Dark mode" label
-   did nothing. The checkbox is now hidden (the label is what visitors click), and the label
-   gets a pointer cursor so people know it is clickable. */
-#dark-mode-toggle {
-  display: none;
-}
-
-label[for="dark-mode-toggle"] {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* REVIEW: the dark mode rules were missing. body:has(...) changes the colours when the checkbox is ticked.
-   :has() is supported in all current major browsers (Chrome, Edge, Firefox, Safari). */
-body:has(#dark-mode-toggle:checked) {
-  background-color: #1e1e1e;
-  color: #e6e6e6;
-}
-
-body:has(#dark-mode-toggle:checked) h1 {
-  /* A lighter red so the heading is readable on the dark background. */
-  color: #ff8080;
-}
-
-body:has(#dark-mode-toggle:checked) nav {
-  background-color: #3b0050;
-}
-
-/* REVIEW: makes it obvious that the skill pills on work.html can be clicked. */
-.skill-pill {
-  cursor: pointer;
+  color: #690083;
 }
